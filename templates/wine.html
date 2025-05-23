@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}HSGW // {{ wine_name }}{% endblock %}
+
+{% block content %}
+<div class="row" id="wine-info">
+    <h1 class="col"">{{ wine_name }}</h1>
+    <p class="col" ">Product van Nederland​</p>
+    <p class="col" ">Beschermde Geografische Aanduiding Zuid-Holland​</p>
+    <p class="col" ">Bottelaar De Haagse Stadswijngaard, Den Haag (NL)​</p>
+    <p class="col" ">12,5 % vol​<br>0,75l ​<br>2024</p>
+    <p class="col" ">Bevat sulfieten (vet gedrukt)​E 75kcal/390kJ per 100ml​</p>
+</div>
+
+<div class="row" id="xtr-info">
+    <p class="col" style="grid-column: 4 / span 3;">
+        Het begon met een wild idee: een wijngaard in de mooie stad Den Haag. Een wijngaard midden in een wijk waar je hem niet verwacht. In Laak, net naast de oude binnenhavens, pal aan station Moerwijk. Daar, en juist daar, groeien sinds 2014 onze druiven het beste. Beschut door de spoordijk, gevoed door liefde en zorg, vertroeteld door mensen die samen leren hoe het is om wijnboer te zijn. ​
+    </p>
+    <p class="col" style="grid-column: 4 / span 3;">
+        Lees hier meer over de wijngaard, urban farming en deze fles wijn
+    </p>
+</div>
+{% endblock %}

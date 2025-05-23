@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#FFFFFF">
+    <title>{% block title %}HSGW{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="video-container">
+        <video id="background-video" muted loop playsinline autoplay>
+            <source src="{{ url_for('static', filename='content/videos/' + video_filename) }}" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2">
+            why doesnt your browser support video play?
+        </video>
+    </div>
+    <nav class="row">
+        <a href="/" class="col">HSGW</a>
+        <a href="/about" class="col">over ons</a>
+        <a href="/join" class="col">doe mee</a>
+        <a href="/agenda" class="col">agenda</a>
+        <a href="/repertoire" class="col">repertoire</a>
+        <a href="/contact" class="col">contact</a>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
