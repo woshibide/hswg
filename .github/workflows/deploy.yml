@@ -1,0 +1,51 @@
+# simple workflow for deploying static content to github pages
+name: Deploy static content to Pages
+
+on:
+  # runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # allows you to run this workflow manually from the actions tab
+  workflow_dispatch:
+
+# sets permissions of the github_token to allow deployment to github pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# however, do not cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Build static site
+        run: python build.py
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # upload only one folder
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

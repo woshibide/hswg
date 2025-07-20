@@ -4,7 +4,7 @@ import random
 from jinja2 import Environment, FileSystemLoader
 
 # configuration
-PUBLISH_TO_GITHUB_PAGES = False  # set to true to build for github pages
+PUBLISH_TO_GITHUB_PAGES = True  # set to true to build for github pages
 TEMPLATES_DIR = 'templates'
 OUTPUT_DIR = 'dist'
 STATIC_DIR = 'static'
