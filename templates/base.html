@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="{{ base_path }}static/favicon.ico" sizes="any">
+    <link rel="icon" href="{{ base_path }}static/favicon.svg" type="image/svg+xml">
     <meta name="theme-color" content="#FFFFFF">
     <title>{% block title %}HSGW{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ base_path }}static/styles.css">
 </head>
 <body>
     <div class="video-container">
         <video id="background-video" muted loop playsinline autoplay>
-            <source src="{{ url_for('static', filename='content/videos/' + video_filename) }}" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2">
+            <source src="{{ base_path }}static/content/videos/{{ video_filename }}" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2">
             why doesnt your browser support video play?
         </video>
     </div>
     <nav class="row">
-        <a href="/" class="col">HSGW</a>
-        <a href="/about" class="col">over ons</a>
-        <a href="/join" class="col">doe mee</a>
-        <a href="/agenda" class="col">agenda</a>
-        <a href="/repertoire" class="col">repertoire</a>
-        <a href="/contact" class="col">contact</a>
+        <a href="{{ base_path }}index.html" class="col">HSGW</a>
+        <a href="{{ base_path }}about.html" class="col">over ons</a>
+        <a href="{{ base_path }}join.html" class="col">doe mee</a>
+        <a href="{{ base_path }}agenda.html" class="col">agenda</a>
+        <a href="{{ base_path }}repertoire.html" class="col">repertoire</a>
+        <a href="{{ base_path }}contact.html" class="col">contact</a>
     </nav>
     <div class="content">
         {% block content %}{% endblock %}
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ base_path }}static/script.js"></script>
 </body>
 </html>
