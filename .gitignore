@@ -11,6 +11,3 @@ htmlcov/
 
 build/
 *.egg-info/
-
-*.mp4
-*.mov
