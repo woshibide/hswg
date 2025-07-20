@@ -3,7 +3,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
 
 @font-face {
     font-family: 'Rooftop';
-    src: url('/static/Rooftop-Regular.woff') format('woff');
+    src: url('Rooftop-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
